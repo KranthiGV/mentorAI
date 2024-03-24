@@ -20,9 +20,9 @@ def get_mentors() -> list[Mentor]:
 def get_mentor(mentor_id: str) -> Mentor:
     return db.mentors.get(mentor_id)
 
-@web_app.post("/chat")
-def chat():
-    return os.environ["ANTHROPIC_API_KEY"]
+@web_app.get("/chat/{mentor_id}")
+def chat(mentor_id: str):
+    return (mentor_id, os.environ["ANTHROPIC_API_KEY"])
 
 @stub.function()
 @asgi_app()
