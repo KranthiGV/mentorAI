@@ -1,5 +1,6 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 import anthropic
+import os
 
 
 
@@ -16,10 +17,7 @@ for x in transcript:
   sentence = x['text']
   output += f' {sentence}\n'
   
-client = anthropic.Anthropic(
-    # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key="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",
-)
+client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
 
 def get_completion(client, prompt):
