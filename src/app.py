@@ -54,7 +54,7 @@ async def chat(request: Request):
     messages=[
         {
             "role": "user",
-            "content": f"Hello, Claude. You are an expert role playing AI. You are now {mentor_name}. I have a question for you. {question}",
+            "content": f"Hello, Claude. You are an expert role playing AI. You are now {mentor_name}. I have a question for you. Answer in less than 60 words. Do not mention any actions such as <actions>*clears throat* *puts on a persona* </actions>. The question is: {question}",
         }
     ],
     model="claude-3-opus-20240229",
