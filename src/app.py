@@ -18,7 +18,7 @@ def get_mentors() -> list[Mentor]:
 
 @web_app.get('/mentors/{mentor_id}')
 def get_mentor(mentor_id: str) -> Mentor:
-    return db.get_mentor(mentor_id)
+    return db.mentors.get(mentor_id)
 
 @web_app.post("/chat")
 def chat():
